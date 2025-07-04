@@ -7,6 +7,7 @@ import CustomPayment from './CustomPayment';
 import InvoicePayment from './InvoicePayment';
 import CustomerLookup from './CustomerLookup';
 import StripeReaderSelector from './StripeReaderSelector';
+import { endPoint } from '@/lib/utils';
 
 interface POSInterfaceProps {
   onLogout: () => void;

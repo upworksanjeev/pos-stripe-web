@@ -5,6 +5,7 @@ import { Label } from '@/components/ui/label';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Textarea } from '@/components/ui/textarea';
 import { CreditCard, DollarSign } from 'lucide-react';
+import { endPoint } from '@/lib/utils';
 
 interface CustomPaymentProps {
   readerID?: string | null;

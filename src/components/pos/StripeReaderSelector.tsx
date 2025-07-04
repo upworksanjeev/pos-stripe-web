@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogFooter } from '@/components/ui/dialog';
 import { Button } from '@/components/ui/button';
 import { loadStripeTerminal } from '@stripe/terminal-js';
+import { endPoint } from '@/lib/utils';
 
 interface StripeReaderSelectorProps {
   isOpen: boolean;

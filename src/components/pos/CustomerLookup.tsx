@@ -4,6 +4,7 @@ import { Input } from '@/components/ui/input';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Search, Users, Mail, Phone, CreditCard } from 'lucide-react';
+import { endPoint } from '@/lib/utils';
 
 interface CustomerLookupProps {
   readerID?: string | null;
