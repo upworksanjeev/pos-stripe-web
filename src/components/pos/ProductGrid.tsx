@@ -39,7 +39,7 @@ const ProductGrid = ({ readerID }: ProductGridProps) => {
         const fetchProducts = async () => {
             setLoading(true);
             try {
-                const res = await fetch("http://localhost:4242/api/products");
+                const res = await fetch(`${endPoint}/api/products`);
                 const data = await res.json();
                 setProducts(data);
             } catch (err) {
@@ -52,7 +52,7 @@ const ProductGrid = ({ readerID }: ProductGridProps) => {
     }, []);
 
     const handlePayment = async (product: Product) => {
-        const res = await fetch("http://localhost:4242/api/create-payment-intent", {
+        const res = await fetch(`${endPoint}/api/create-payment-intent`, {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({
@@ -68,7 +68,7 @@ const ProductGrid = ({ readerID }: ProductGridProps) => {
             return;
         }
         
-        const res2 = await fetch("http://localhost:4242/api/process-payment", {
+        const res2 = await fetch(`${endPoint}/api/process-payment`, {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({ paymentIntentId: result.paymentIntentId , readerId: readerID })

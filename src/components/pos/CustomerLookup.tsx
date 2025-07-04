@@ -19,7 +19,7 @@ const CustomerLookup = ({ readerID }: CustomerLookupProps) => {
     const fetchAllCustomers = async () => {
         setLoading(true);
         try {
-            const res = await fetch("http://localhost:4242/api/customers");
+            const res = await fetch(`${endPoint}/api/customers`);
             const data = await res.json();
             setAllCustomers(data || []);
             setFilteredCustomers(data || []);

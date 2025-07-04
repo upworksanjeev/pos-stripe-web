@@ -23,7 +23,7 @@ const CustomPayment = ({ readerID }: CustomPaymentProps) => {
       return;
     }
 
-    const response = await fetch("http://localhost:4242/api/create-payment-intent", {
+    const response = await fetch(`${endPoint}/api/create-payment-intent`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
@@ -34,7 +34,7 @@ const CustomPayment = ({ readerID }: CustomPaymentProps) => {
     });
     const result = await response.json();
     
-    const res2 = await fetch("http://localhost:4242/api/process-payment", {
+    const res2 = await fetch(`${endPoint}/api/process-payment`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ paymentIntentId: result.paymentIntentId , readerId: readerID })

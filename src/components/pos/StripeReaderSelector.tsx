@@ -42,7 +42,7 @@ const StripeReaderSelector = ({ isOpen, onClose, onConnect }: StripeReaderSelect
         const newTerminal = stripeTerminal.create({
           onFetchConnectionToken: async () => {
             try {
-              const response = await fetch('http://localhost:4242/api/connection-token', { method: 'POST' });
+              const response = await fetch(`${endPoint}/api/connection-token`, { method: 'POST' });
               const data = await response.json();
               return data.secret;
             } catch (err) {

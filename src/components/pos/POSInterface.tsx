@@ -98,7 +98,7 @@ const POSInterface = ({ onLogout }: POSInterfaceProps) => {
         if (!locationId) {
           throw new Error('Location ID is required for registering reader.');
         }
-        const response = await fetch('http://localhost:4242/api/register-reader', {
+        const response = await fetch(`${endPoint}/api/register-reader`, {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
@@ -305,7 +305,7 @@ const POSInterface = ({ onLogout }: POSInterfaceProps) => {
                       onClick={async () => {
                         try {
                           console.log(label);
-                          const response = await fetch('http://localhost:4242/api/create-location', {
+                          const response = await fetch(`${endPoint}/api/create-location`, {
                             method: 'POST',
                             headers: {
                               'Content-Type': 'application/json',
