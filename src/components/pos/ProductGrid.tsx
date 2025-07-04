@@ -3,6 +3,7 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { CreditCard, Star } from 'lucide-react';
+import { endPoint } from '@/lib/utils';
 
 interface Product {
     id: string;
