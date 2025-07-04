@@ -6,4 +6,4 @@ export function cn(...inputs: ClassValue[]) {
 }
 
 
-export const endPoint=https://phenomenal-crumble-f87774.netlify.app/
+export const endPoint="https://phenomenal-crumble-f87774.netlify.app/"
