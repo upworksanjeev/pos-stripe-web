@@ -5,6 +5,7 @@ import { Label } from '@/components/ui/label';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Search, FileText, CreditCard } from 'lucide-react';
+import { endPoint } from '@/lib/utils';
 
 interface InvoicePaymentProps {
   readerID?: string | null;
@@ -23,7 +24,7 @@ const InvoicePayment = ({ readerID }: InvoicePaymentProps) => {
   const fetchInvoices = async () => {
     setLoading(true);
     try {
-        const res = await fetch("http://localhost:4242/api/invoices");
+        const res = await fetch(`${endPoint}/api/invoices`);
         const data = await res.json();
         setInvoices(data || []);
         setFilteredInvoices(data || []);
